@@ -45,6 +45,7 @@ int main() {
     list.Add(2);
     list.Add(3);
     list.Add(5);
+    list.Add(10);
     list.Print();
     return 0;
 };
