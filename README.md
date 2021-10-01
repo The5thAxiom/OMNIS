@@ -15,6 +15,10 @@ Making common algorithms, data structures, other stuff in as many different lang
     3. Binary Search Trees
     4. AVL Trees
 5. Graphs
+6. Sets
+7. Heaps
+    1. Min Heaps
+    2. Max Heaps
 ## Algorithms
 1. Sorting
     1. Bubble Sort
@@ -22,7 +26,7 @@ Making common algorithms, data structures, other stuff in as many different lang
     3. Insertion Sort
     4. Quick Sort
 2. Searching
-  1. Binary Search
+    1. Binary Search
 ## Other Programs
 1. Geometry
 2. Sparse Matrix Representation
