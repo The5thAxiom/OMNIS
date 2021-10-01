@@ -15,12 +15,14 @@ private:
     struct Node * Head;
 public:
     SinglyLinkedList() {
+        this->Head = (struct Node *)calloc(1, sizeof(struct Node));
         this->Head->next = NULL;
         this->Head->value = 0;
     }
     void Add(int num) {
         struct Node * temp = (struct Node *)calloc(1, sizeof(struct Node));
         temp->value = num;
+        temp->next = NULL;
         struct Node * cursor = this->Head;
         while (cursor->next != NULL) {
             cursor = cursor->next;
@@ -35,6 +37,7 @@ public:
             cursor = cursor->next;
             std::cout << cursor->value << std::endl;
         }
+        free(cursor);
     }
 };
 
