@@ -109,11 +109,12 @@ struct DoubleNode {
 
 /*
     Functions:
-        - int SinglyLinkedList::Size(): returns the size of the list
-        - void SinglyLinkedList::Add(int num): inserts an elment at the end of the list
-        - void SinglyLinkedList::Insert(int num, int index): inserts an element at the specified index
-        - void SinglyLinkedList::Delete(int index): deletes an element at the specified index
-        - void SinglyLinkedList::Print(): prints out the elements of the list to the console
+        - int DoublyLinkedList::Size(): returns the size of the list
+        - void DoublyLinkedList::Add(int num): inserts an elment at the end of the list
+        - void DoublyLinkedList::Insert(int num, int index): inserts an element at the specified index
+        - void DoublyLinkedList::Delete(int index): deletes an element at the specified index
+        - void DoublyLinkedList::Print(): prints out the elements of the list to the console
+        - void DoublyLinkedList::ReversePrint(): prints out the elements of the list to the console in the reverse order
 */
 class DoublyLinkedList {
 private:
