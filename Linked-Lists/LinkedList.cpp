@@ -22,6 +22,18 @@ public:
     }
 // Methods
     /*
+        Returns the size of the Linked List
+    */
+    int Size() {
+        int count = 0;
+        struct Node * cursor = this->Head;
+        while (cursor->next != NULL) {
+            cursor = cursor->next;
+            count++;
+        }
+        return count;
+    }
+    /*
         For inserting a node at the end of the list
     */
     void Add(int num) {
@@ -54,14 +66,31 @@ public:
         temp->next = rightCursor;
     }
     /*
+        For deleting the specified index (starting from 0)
+    */
+   void Delete(int index) {
+        int count = 0;
+        struct Node * rightCursor = this->Head->next;
+        struct Node * leftCursor = this->Head;
+        while (count != index) {
+            rightCursor = rightCursor->next;
+            leftCursor = leftCursor->next;
+            count++;
+        }
+        leftCursor->next = rightCursor->next;
+        free(rightCursor);
+   }
+    /*
         For printing out the whole list
     */
     void Print() {
+        std::cout << this->Size() << " elements: ";
         struct Node * cursor = this->Head;
         while (cursor->next != NULL) {
             cursor = cursor->next;
-            std::cout << cursor->value << std::endl;
+            std::cout << cursor->value << " ";
         }
+        std::cout << std::endl;
     }
 };
 
@@ -73,8 +102,16 @@ int main() {
     list.Add(3);
     list.Add(5);
     list.Add(10);
+    list.Print();
     list.Insert(1, 3);
-    list.Insert(345, 0);
+    list.Print();
+    list.Insert(50, 5);
+    list.Print();
+    list.Insert(60, 7);
+    list.Print();
+    list.Delete(2);
+    list.Print();
+    list.Delete(4);
     list.Print();
     return 0;
 };
