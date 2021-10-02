@@ -6,6 +6,15 @@ struct Node {
     struct Node * prev = NULL; // this one is not used at all for a singly linked list
 };
 
+
+/*
+    Functions:
+        - int SinglyLinkedList::Size(): returns the size of the list
+        - void SinglyLinkedList::Add(int num): inserts an elment at the end of the list
+        - void SinglyLinkedList::Insert(int num, int index): inserts an element at the specified index
+        - void SinglyLinkedList::Delete(int index): deletes an element at the specified index
+        - void SinglyLinkedList::Print(): prints out the elements of the list to the console
+*/
 class SinglyLinkedList {
 private:
     /**
@@ -93,7 +102,6 @@ public:
         std::cout << std::endl;
     }
 };
-
 
 int main() {
     SinglyLinkedList list = SinglyLinkedList();
