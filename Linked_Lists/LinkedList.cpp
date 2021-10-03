@@ -11,13 +11,11 @@ class SinglyLinkedList {
 private:
     struct SingleNode<type> * Head;
 public:
-// Constructor(s)
     SinglyLinkedList() {
         this->Head = new struct SingleNode<type>();
         this->Head->next = NULL;
         this->Head->value = 0;
     }
-// Methods
     int Size() {
         int count = 0;
         struct SingleNode<type> * cursor = this->Head;
@@ -98,14 +96,12 @@ class DoublyLinkedList {
 private:
     struct DoubleNode<type> * Head;
 public:
-// Constructor(s)
     DoublyLinkedList() {
         this->Head = new struct DoubleNode<type>();
         this->Head->next = NULL;
         this->Head->prev = NULL;
         this->Head->value = 0;
     }
-// Methods
     int Size() {
         int count = 0;
         struct DoubleNode<type> * cursor = this->Head;
