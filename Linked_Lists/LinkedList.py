@@ -6,8 +6,8 @@ class SingleNode:
         self.next = None
     def SetValue(self, num):
         self.value = num
-    def SetNext(self, SingleNode):
-        self.next = SingleNode
+    def SetNext(self, node):
+        self.next = node
     def Value(self):
         return self.value
     def Next(self):
@@ -72,6 +72,24 @@ class SinglyLinkedList:
             print(str)
         else:
             print(self.Access(index))
+
+class DoubleNode:
+    def __init__(self):
+        self.value = 0
+        self.next = None
+        self.prev = None
+    def SetValue(self, num):
+        self.value = num
+    def SetNext(self, node):
+        self.next = node
+    def SetPrev(self, node):
+        self.next = node
+    def Value(self):
+        return self.value
+    def Next(self):
+        return self.next
+    def Prev(self):
+        return self.prev
 
 if __name__ == "__main__":
     list = SinglyLinkedList()
