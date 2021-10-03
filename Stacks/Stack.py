@@ -2,6 +2,7 @@
 # might need to change it
 
 # This array does not care about the types of the element
+from ..Linked_Lists import LinkedList as ll
 
 class ArrayStack:
     def __init__(self, size):
