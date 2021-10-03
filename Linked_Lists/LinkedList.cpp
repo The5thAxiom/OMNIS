@@ -59,7 +59,7 @@ public:
             count++;
         }
         leftCursor->next = rightCursor->next;
-        free(rightCursor);
+        delete rightCursor;
     }
     type Access(int index) {
         int count = -1;
@@ -148,7 +148,7 @@ public:
         }
         leftCursor->next = rightCursor->next;
         leftCursor->next->prev = leftCursor;
-        free(rightCursor);
+        delete rightCursor;
     }
     type Access(int index) {
         int count = -1;
