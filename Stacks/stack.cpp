@@ -39,6 +39,7 @@ public:
 };
 
 int main() {
+    std::cout << "Testing Stacks" << std::endl;
     ArrayStack stk(3);
     stk.Push(10);
     stk.Print();
