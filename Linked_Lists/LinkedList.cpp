@@ -6,35 +6,18 @@ struct SingleNode {
     struct SingleNode<type> * next = NULL;
 };
 
-/*
-    Functions:
-        - int SinglyLinkedList::Size(): returns the size of the list
-        - void SinglyLinkedList::Add(int num): inserts an elment at the end of the list
-        - void SinglyLinkedList::Insert(int num, int index): inserts an element at the specified index
-        - void SinglyLinkedList::Delete(int index): deletes an element at the specified index
-        - void SinglyLinkedList::Access(int index): returns the value at specified index (not the actual node)
-        - void SinglyLinkedList::Print(): prints out the elements of the list to the console
-        - void SinglyLinkedList::Print(int index): prints out the specified element of the list to the console
-*/
 template <typename type>
 class SinglyLinkedList {
 private:
-    /**
-     * Only points to the first element of the list
-     * (not a part of the list)
-    */
     struct SingleNode<type> * Head;
 public:
 // Constructor(s)
     SinglyLinkedList() {
-        this->Head = (struct SingleNode<type> *)calloc(1, sizeof(struct SingleNode<type>));
+        this->Head = new struct SingleNode<type>();
         this->Head->next = NULL;
         this->Head->value = 0;
     }
 // Methods
-    /*
-        Returns the size of the Linked List
-    */
     int Size() {
         int count = 0;
         struct SingleNode<type> * cursor = this->Head;
@@ -44,11 +27,8 @@ public:
         }
         return count;
     }
-    /*
-        For inserting a node at the end of the list
-    */
     void Add(type num) {
-        struct SingleNode<type> * temp = (struct SingleNode<type> *)calloc(1, sizeof(struct SingleNode<type>));
+        struct SingleNode<type> * temp = new struct SingleNode<type>();
         temp->value = num;
         temp->next = NULL;
         struct SingleNode<type> * cursor = this->Head;
@@ -57,16 +37,11 @@ public:
         }
         cursor->next = temp;
     }
-    /*
-        For inserting a node at the given position (starting from 0).
-        The second argument is the position which the element to be inserted
-        after the function is inserted.
-    */
     void Insert(type num, int index) {
         int count = 0;
         struct SingleNode<type> * rightCursor = this->Head->next;
         struct SingleNode<type> * leftCursor = this->Head;
-        struct SingleNode<type> * temp = (struct SingleNode<type> *)calloc(1, sizeof(struct SingleNode<type>));
+        struct SingleNode<type> * temp = new struct SingleNode<type>();
         temp->value = num;
         while (count != index) {
             rightCursor = rightCursor->next;
@@ -76,9 +51,6 @@ public:
         leftCursor->next = temp;
         temp->next = rightCursor;
     }
-    /*
-        For deleting the specified index (starting from 0)
-    */
     void Delete(int index) {
         int count = 0;
         struct SingleNode<type> * rightCursor = this->Head->next;
@@ -91,9 +63,6 @@ public:
         leftCursor->next = rightCursor->next;
         free(rightCursor);
     }
-    /*
-        Returns the element (not the actual node of the list) at the specified
-    */
     type Access(int index) {
         int count = -1;
         struct SingleNode<type> * cursor = this->Head;
@@ -103,9 +72,6 @@ public:
         }
         return cursor->value;
     }
-    /*
-        For printing out the whole list
-    */
     void Print() {
         std::cout << this->Size() << " elements: ";
         struct SingleNode<type> * cursor = this->Head;
@@ -115,9 +81,6 @@ public:
         }
         std::cout << std::endl;
     }
-    /*
-        For Printing a specified element of the list
-    */
     void Print(int index) {
         std::cout << this->Access(index) << std::endl;
     }
@@ -130,37 +93,19 @@ struct DoubleNode {
     struct DoubleNode<type> * prev = NULL;
 };
 
-/*
-    Functions:
-        - int DoublyLinkedList::Size(): returns the size of the list
-        - void DoublyLinkedList::Add(int num): inserts an elment at the end of the list
-        - void DoublyLinkedList::Insert(int num, int index): inserts an element at the specified index
-        - void DoublyLinkedList::Delete(int index): deletes an element at the specified index
-        - void DoublyLinkedList::Access(int index): returns the value at specified index (not the actual node)
-        - void DoublyLinkedList::Print(): prints out the elements of the list to the console
-        - void DoublyLinkedList::Print(int index): prints out the specified element of the list to the console
-        - void DoublyLinkedList::ReversePrint(): prints out the elements of the list to the console in the reverse order
-*/
 template <typename type>
 class DoublyLinkedList {
 private:
-    /**
-     * Only points to the first element of the list
-     * (not a part of the list)
-    */
     struct DoubleNode<type> * Head;
 public:
 // Constructor(s)
     DoublyLinkedList() {
-        this->Head = (struct DoubleNode<type> *)calloc(1, sizeof(struct DoubleNode<type>));
+        this->Head = new struct DoubleNode<type>();
         this->Head->next = NULL;
         this->Head->prev = NULL;
         this->Head->value = 0;
     }
 // Methods
-    /*
-        Returns the size of the Linked List
-    */
     int Size() {
         int count = 0;
         struct DoubleNode<type> * cursor = this->Head;
@@ -170,11 +115,8 @@ public:
         }
         return count;
     }
-    /*
-        For inserting a node at the end of the list
-    */
     void Add(type num) {
-        struct DoubleNode<type> * temp = (struct DoubleNode<type> *)calloc(1, sizeof(struct DoubleNode<type>));
+        struct DoubleNode<type> * temp = new struct DoubleNode<type>();
         temp->value = num;
         temp->next = NULL;
         struct DoubleNode<type> * cursor = this->Head;
@@ -184,16 +126,11 @@ public:
         cursor->next = temp;
         temp->prev = cursor;
     }
-    /*
-        For inserting a node at the given position (starting from 0).
-        The second argument is the position which the element to be inserted
-        after the function is inserted.
-    */
     void Insert(type num, int index) {
         int count = 0;
         struct DoubleNode<type> * rightCursor = this->Head->next;
         struct DoubleNode<type> * leftCursor = this->Head;
-        struct DoubleNode<type> * temp = (struct DoubleNode<type> *)calloc(1, sizeof(struct DoubleNode<type>));
+        struct DoubleNode<type> * temp = new struct DoubleNode<type>();
         temp->value = num;
         while (count != index) {
             rightCursor = rightCursor->next;
@@ -204,9 +141,6 @@ public:
         temp->next = rightCursor;
         temp->prev = leftCursor;
     }
-    /*
-        For deleting the specified index (starting from 0)
-    */
     void Delete(int index) {
         int count = 0;
         struct DoubleNode<type> * rightCursor = this->Head->next;
@@ -220,9 +154,6 @@ public:
         leftCursor->next->prev = leftCursor;
         free(rightCursor);
     }
-    /*
-        Returns the element (not the actual node of the list) at the specified
-    */
     type Access(int index) {
         int count = -1;
         struct DoubleNode<type> * cursor = this->Head;
@@ -232,9 +163,6 @@ public:
         }
         return cursor->value;
     }
-    /*
-        For printing out the whole list
-    */
     void Print() {
         std::cout << this->Size() << " elements: ";
         struct DoubleNode<type> * cursor = this->Head;
@@ -250,11 +178,11 @@ public:
     void ReversePrint() {
     std::cout << this->Size() << " elements: ";
     struct DoubleNode<type> * cursor = this->Head;
-    while (cursor->next != NULL) { // go to the end of the list
+    while (cursor->next != NULL) {
         cursor = cursor->next;
     }
     std::cout << cursor->value << " ";
-    while (cursor->prev != this->Head) {//
+    while (cursor->prev != this->Head) {
         cursor = cursor->prev;
         std::cout << cursor->value << " ";
     }
