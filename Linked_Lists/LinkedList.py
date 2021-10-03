@@ -91,6 +91,9 @@ class DoubleNode:
     def Prev(self):
         return self.prev
 
+class DoublyLinkedList:
+    pass
+
 if __name__ == "__main__":
     list = SinglyLinkedList()
     list.Add(25)
