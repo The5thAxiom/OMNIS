@@ -1,14 +1,16 @@
-#include<iostream>
+#include <iostream>
+#include <string>
 
+template <typename type>
 class ArrayStack {
 private:
-    int * array;
+    type * array;
     int size;
     int topPointer;
 public:
     ArrayStack(int size) {
         this->size = size;
-        this->array = (int *)calloc(this->size, sizeof(int));
+        this->array = (type *)calloc(this->size, sizeof(type));
         this->topPointer = -1;
     }
     bool IsEmpty() {
@@ -17,20 +19,20 @@ public:
     bool IsFull() {
         return (this->topPointer == this->size - 1);
     }
-    void Push(int num) {
+    void Push(type element) {
         if (this->IsFull()) {
-            std::cout << "Stack full, cannot push " << num << std::endl;
+            std::cout << "Stack full, cannot push " << element << std::endl;
             return;
         }
         this->topPointer++;
-        this->array[this->topPointer] = num;
+        this->array[this->topPointer] = element;
     }
-    int Pop() {
+    type Pop() {
         if (this->IsEmpty()) {
             std::cout << "Stack empty, cannot pop" << std::endl;
             return 0;
         }
-        int popped = this->array[this->topPointer];
+        type popped = this->array[this->topPointer];
         this->array[this->topPointer] == 0;
         this->topPointer--;
         return popped;
@@ -46,7 +48,7 @@ public:
 
 int main() {
     std::cout << "Testing Stacks" << std::endl;
-    ArrayStack stk(3);
+    ArrayStack<int> stk(3);
     stk.Push(10);
     stk.Print();
     stk.Push(20);
@@ -67,5 +69,13 @@ int main() {
     stk.Print();
     stk.Pop();
     stk.Print();
+
+    ArrayStack<std::string> abc(10);
+    abc.Push("Hello");
+    abc.Push(",");
+    abc.Push(" ");
+    abc.Push("World");
+    abc.Push("!");
+    abc.Print();
     return 0;
 }
