@@ -14,6 +14,7 @@ struct SingleNode {
         - void SinglyLinkedList::Delete(int index): deletes an element at the specified index
         - void SinglyLinkedList::Access(int index): returns the value at specified index (not the actual node)
         - void SinglyLinkedList::Print(): prints out the elements of the list to the console
+        - void SinglyLinkedList::Print(int index): prints out the specified element of the list to the console
 */
 template <typename type>
 class SinglyLinkedList {
@@ -137,6 +138,7 @@ struct DoubleNode {
         - void DoublyLinkedList::Delete(int index): deletes an element at the specified index
         - void DoublyLinkedList::Access(int index): returns the value at specified index (not the actual node)
         - void DoublyLinkedList::Print(): prints out the elements of the list to the console
+        - void DoublyLinkedList::Print(int index): prints out the specified element of the list to the console
         - void DoublyLinkedList::ReversePrint(): prints out the elements of the list to the console in the reverse order
 */
 template <typename type>
@@ -242,6 +244,9 @@ public:
         }
         std::cout << std::endl;
     }
+    void Print(int index) {
+        std::cout << this->Access(index) << std::endl;
+    }
     void ReversePrint() {
     std::cout << this->Size() << " elements: ";
     struct DoubleNode<type> * cursor = this->Head;
@@ -253,7 +258,6 @@ public:
         cursor = cursor->prev;
         std::cout << cursor->value << " ";
     }
-    
     std::cout << std::endl;
 }
 };
@@ -296,11 +300,12 @@ int main() {
     list1.Delete(4);
     list1.Print();
 
-    std::cout << list.Access(0) << std::endl;
-    std::cout << list.Access(1) << std::endl;
-    std::cout << list.Access(2) << std::endl;
-    std::cout << list.Access(3) << std::endl;
+    list.Print(0);
+    list.Print(1);
+    list.Print(2);
+    list.Print(3);
 
-    std::cout << list1.Access(3) << std::endl;
+    list1.Print(1);
+    list1.Print(2);
     return 0;
 };
