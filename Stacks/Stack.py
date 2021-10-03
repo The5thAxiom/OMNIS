@@ -2,6 +2,7 @@
 # might need to change it
 
 # This array does not care about the types of the element
+
 class ArrayStack:
     def __init__(self, size):
         self.size = size
