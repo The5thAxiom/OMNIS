@@ -83,7 +83,7 @@ class DoubleNode:
     def SetNext(self, node):
         self.next = node
     def SetPrev(self, node):
-        self.next = node
+        self.prev = node
     def Value(self):
         return self.value
     def Next(self):
