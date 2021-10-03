@@ -12,6 +12,7 @@ struct SingleNode {
         - void SinglyLinkedList::Add(int num): inserts an elment at the end of the list
         - void SinglyLinkedList::Insert(int num, int index): inserts an element at the specified index
         - void SinglyLinkedList::Delete(int index): deletes an element at the specified index
+        - void SinglyLinkedList::Access(int index): returns the value at specified index (not the actual node)
         - void SinglyLinkedList::Print(): prints out the elements of the list to the console
 */
 template <typename type>
@@ -77,7 +78,7 @@ public:
     /*
         For deleting the specified index (starting from 0)
     */
-   void Delete(int index) {
+    void Delete(int index) {
         int count = 0;
         struct SingleNode<type> * rightCursor = this->Head->next;
         struct SingleNode<type> * leftCursor = this->Head;
@@ -88,7 +89,19 @@ public:
         }
         leftCursor->next = rightCursor->next;
         free(rightCursor);
-   }
+    }
+    /*
+        Returns the element (not the actual node of the list) at the specified
+    */
+    type Access(int index) {
+        int count = -1;
+        struct SingleNode<type> * cursor = this->Head;
+        while (count != index) {
+            cursor = cursor->next;
+            count++;
+        }
+        return cursor->value;
+    }
     /*
         For printing out the whole list
     */
@@ -101,7 +114,14 @@ public:
         }
         std::cout << std::endl;
     }
+    /*
+        For Printing a specified element of the list
+    */
+    void Print(int index) {
+        std::cout << this->Access(index) << std::endl;
+    }
 };
+
 template <typename type>
 struct DoubleNode {
     type value = 0;
@@ -115,6 +135,7 @@ struct DoubleNode {
         - void DoublyLinkedList::Add(int num): inserts an elment at the end of the list
         - void DoublyLinkedList::Insert(int num, int index): inserts an element at the specified index
         - void DoublyLinkedList::Delete(int index): deletes an element at the specified index
+        - void DoublyLinkedList::Access(int index): returns the value at specified index (not the actual node)
         - void DoublyLinkedList::Print(): prints out the elements of the list to the console
         - void DoublyLinkedList::ReversePrint(): prints out the elements of the list to the console in the reverse order
 */
@@ -184,7 +205,7 @@ public:
     /*
         For deleting the specified index (starting from 0)
     */
-   void Delete(int index) {
+    void Delete(int index) {
         int count = 0;
         struct DoubleNode<type> * rightCursor = this->Head->next;
         struct DoubleNode<type> * leftCursor = this->Head;
@@ -196,7 +217,19 @@ public:
         leftCursor->next = rightCursor->next;
         leftCursor->next->prev = leftCursor;
         free(rightCursor);
-   }
+    }
+    /*
+        Returns the element (not the actual node of the list) at the specified
+    */
+    type Access(int index) {
+        int count = -1;
+        struct DoubleNode<type> * cursor = this->Head;
+        while (count != index) {
+            cursor = cursor->next;
+            count++;
+        }
+        return cursor->value;
+    }
     /*
         For printing out the whole list
     */
@@ -262,5 +295,12 @@ int main() {
     list1.Print();
     list1.Delete(4);
     list1.Print();
+
+    std::cout << list.Access(0) << std::endl;
+    std::cout << list.Access(1) << std::endl;
+    std::cout << list.Access(2) << std::endl;
+    std::cout << list.Access(3) << std::endl;
+
+    std::cout << list1.Access(3) << std::endl;
     return 0;
 };
