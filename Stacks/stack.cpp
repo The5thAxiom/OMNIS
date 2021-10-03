@@ -33,7 +33,7 @@ public:
             return 0;
         }
         type popped = this->array[this->topPointer];
-        this->array[this->topPointer] == 0;
+        this->array[this->topPointer] = 0;
         this->topPointer--;
         return popped;
     }
