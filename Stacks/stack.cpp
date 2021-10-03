@@ -11,8 +11,14 @@ public:
         this->array = (int *)calloc(this->size, sizeof(int));
         this->topPointer = -1;
     }
+    bool IsEmpty() {
+        return (this->topPointer == -1);
+    }
+    bool IsFull() {
+        return (this->topPointer == this->size - 1);
+    }
     void Push(int num) {
-        if (this->topPointer == this->size - 1) {
+        if (this->IsFull()) {
             std::cout << "Stack full, cannot push " << num << std::endl;
             return;
         }
@@ -20,7 +26,7 @@ public:
         this->array[this->topPointer] = num;
     }
     int Pop() {
-        if (this->topPointer == -1) {
+        if (this->IsEmpty()) {
             std::cout << "Stack empty, cannot pop" << std::endl;
             return 0;
         }
@@ -52,6 +58,14 @@ int main() {
     stk.Pop();
     stk.Print();
     stk.Push(50);
+    stk.Print();
+    stk.Pop();
+    stk.Print();
+    stk.Pop();
+    stk.Print();
+    stk.Pop();
+    stk.Print();
+    stk.Pop();
     stk.Print();
     return 0;
 }
