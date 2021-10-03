@@ -2,7 +2,7 @@
 
 template <typename type>
 struct SingleNode {
-    type value = 0;
+    type value;
     struct SingleNode<type> * next = NULL;
 };
 
@@ -125,7 +125,7 @@ public:
 
 template <typename type>
 struct DoubleNode {
-    type value = 0;
+    type value;
     struct DoubleNode<type> * next = NULL;
     struct DoubleNode<type> * prev = NULL;
 };

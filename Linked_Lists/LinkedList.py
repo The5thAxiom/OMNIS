@@ -94,6 +94,7 @@ class DoubleNode:
 class DoublyLinkedList:
     def __init__(self):
         pass
+
 if __name__ == "__main__":
     list = SinglyLinkedList()
     list.Add(25)
