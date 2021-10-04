@@ -13,6 +13,11 @@ def bubbleSort(array):
 
 def selectionSort(array):
     print("Running selection sort on : {}".format(array))
+    for i in range(len(array)):
+        min = i
+        for j in range(i + 1, len(array)):
+            if array[j] < min:
+                min = array[j]
     print(array)
 
 def insertionSort(array):
