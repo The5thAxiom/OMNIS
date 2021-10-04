@@ -6,8 +6,8 @@
 | Linked List Stack| X | X |
 | Linear Queue | X | X |
 | Circular Queue | X | X |
-| Singly Linked List | X | X |
-| Doubly Linked List | X | X |
+| Singly Linked List | WIP | WIP |
+| Doubly Linked List | WIP | WIP |
 | N-ary Tree | X | X |
 | Binary Tree | X | X |
 | Binary Search Tree | X | X |
