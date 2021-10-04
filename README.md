@@ -68,5 +68,4 @@ Making common algorithms, data structures, other stuff in as many different lang
 2. Searching
     1. Binary Search
 ## Other Programs
-1. Geometry
-2. Sparse Matrix Representation
+1. Sparse Matrix Representation
