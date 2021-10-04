@@ -65,13 +65,11 @@ void insertionSort(int * array, int size) {
     printArray(array, size);
     for (i = 0; i < size; i++) {
         temp = array[i]; // the 'current' element
-        for (j = i - 1; j >= 0; j--) { // go back
-            if (array[j] > temp) { // move the elements forward if bigger
+        for (j = i - 1; j > -1; j--) { // go back from the current element
+            if (array[j] > temp) { // if the previous element is greater than the 'current' one, move it forwards
                 array[j + 1] = array[j];
-            } else {
-                array[j + 1] = temp;
-                break;
-            }
+            } else break;// if its not, it means here is where the 'current' must be placed
+            array[j] = temp;
         }
     }
     printArray(array, size);
