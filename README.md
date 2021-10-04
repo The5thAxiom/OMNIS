@@ -1,7 +1,7 @@
 > This is still a WIP
 # OMNIS
 Making common algorithms, data structures, other stuff in as many different languages as possible.
-# Current Languages
+# Planned Languages
 1. C++
 2. Python3
 3. Javascript
