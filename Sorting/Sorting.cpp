@@ -37,17 +37,17 @@ void bubbleSort(int * array, int size) {
     O(n^2) i think for the worst case
 */
 void selectionSort(int * array, int size) {
-    int i, j, temp, min;
+    int current, j, temp, min;
     std::cout << "Running selection sort on: ";
     printArray(array, size);
-    for (i = 0; i < size - 2; i++) { // for the 1st element
-        min = i;
-        for (j = i + 1; j < size - 1; j++) { // if any element after it is smaller, make it the min element
+    for (current = 0; current < size ; current++) { // for the 1st element
+        min = current;
+        for (j = current ; j < size ; j++) { // if any element after it is smaller, make it the min element
             if (array[j] < array[min]) {
-                array[min] = array[j];
+                min = j;                //update the index
             }
-            temp = array[i];
-            array[i] = array[min];
+            temp = array[current];
+            array[current] = array[min]; //swapping
             array[min] = temp;
         }
     }
