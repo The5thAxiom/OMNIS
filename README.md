@@ -1,11 +1,43 @@
 > This is still a WIP
+
+| Data Strucutres |C++|Python3|
+|---|---|-------|
+| Array Stack| WIP | WIP |
+| Linked List Stack| X | X |
+| Linear Queue | X | X |
+| Circular Queue | X | X |
+| Singly Linked List | X | X |
+| Doubly Linked List | X | X |
+| N-ary Tree | X | X |
+| Binary Tree | X | X |
+| Binary Search Tree | X | X |
+| Hash Maps | X | X |
+| Graphs | X | X |
+| Sets | X | X |
+| Min Heap | X | X |
+| Max Heap| X | X |
+
+
+| Algortithms |C++|Python3|
+|---|---|-------|
+| Bubble Sort | WIP | WIP |
+| Selection Sort | WIP | WIP |
+| Insertion Sort | WIP | WIP |
+| Quick Sort | X | X |
+| Merge Sort | X | X |
+
+
+| Symbol | Meaning |
+|--------|---------|
+| WIP | Work in progress |
+| X | Not Started |
+| Done | Completed |
+
 # OMNIS
 Making common algorithms, data structures, other stuff in as many different languages as possible.
 # Planned Languages
 1. C++
 2. Python3
-3. Javascript
-4. Java
 # What
 ## Data Structures
 1. Stacks
@@ -20,9 +52,10 @@ Making common algorithms, data structures, other stuff in as many different lang
     2. Binary Trees
     3. Binary Search Trees
     4. AVL Trees
-5. Graphs
-6. Sets
-7. Heaps
+5. Hash Maps
+6. Graphs
+7. Sets
+8. Heaps
     1. Min Heaps
     2. Max Heaps
 ## Algorithms
@@ -31,6 +64,7 @@ Making common algorithms, data structures, other stuff in as many different lang
     2. Selection Sort
     3. Insertion Sort
     4. Quick Sort
+    5. Merge Sort
 2. Searching
     1. Binary Search
 ## Other Programs
