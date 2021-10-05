@@ -82,6 +82,15 @@ public:
     void Print(int index) {
         std::cout << this->Access(index) << std::endl;
     }
+    void operator<<(type num) {
+        this->Add(num);
+    }
+    void operator+(type num) {
+        this->Add(num);
+    }
+    void operator+=(type num) {
+        this->Add(num);
+    }
 };
 
 template <typename type>
@@ -183,14 +192,23 @@ public:
         std::cout << cursor->value << " ";
     }
     std::cout << std::endl;
-}
+    }
+    void operator<<(type num) {
+        this->Add(num);
+    }
+    void operator+(type num) {
+        this->Add(num);
+    }
+    void operator+=(type num) {
+        this->Add(num);
+    }
 };
 
 int main() {
     SinglyLinkedList<int> list;
-    list.Add(25);
-    list.Add(2);
-    list.Add(3);
+    list << 25;
+    list + 2;
+    list += 3;
     list.Add(5);
     list.Add(10);
     list.Print();
@@ -206,9 +224,9 @@ int main() {
     list.Print();
 
     DoublyLinkedList<char> list1;
-    list1.Add('a');
-    list1.Add('b');
-    list1.Add('c');
+    list1 << 'a';
+    list1 += 'b';
+    list1 + 'c';
     list1.Add('d');
     list1.Add('s');
     list1.Print();
