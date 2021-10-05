@@ -76,31 +76,31 @@ void mergeSort(int * array, int size) {
 
 int main() {
     int size = 8;
-    int arr1[size] = {7, 8, 3, 9, 11, 2, 15, 12};
+    int arr1[size] = {7, 8, 3, 9, 11, 2, 16, 12};
     std::cout << "Running bubble sort on: ";
     printArray(arr1, size);
     bubbleSort(arr1, size);
     printArray(arr1, size);
     
-    int arr2[8] = {7, 8, 3, 9, 11, 2, 15, 12};
+    int arr2[8] = {7, 8, 3, 9, 11, 2, 16, 12};
     std::cout << "Running selection sort on: ";
     printArray(arr2, size);
     selectionSort(arr2, size);
     printArray(arr2, size);
 
-    int arr3[8] = {7, 8, 3, 9, 11, 2, 15, 12};
+    int arr3[8] = {7, 8, 3, 9, 11, 2, 16, 12};
     std::cout << "Running insertion sort on: ";
     printArray(arr3, size);
     insertionSort(arr3, size);
     printArray(arr3, size);
 
-    int arr4[8] = {7, 8, 3, 9, 11, 2, 15, 12};
+    int arr4[8] = {7, 8, 3, 9, 11, 2, 16, 12};
     std::cout << "Running quick sort on: ";
     printArray(arr4, size);
     quickSort(arr4, size);
     printArray(arr4, size);
 
-    int arr5[8] = {7, 8, 3, 9, 11, 2, 15, 12};
+    int arr5[8] = {7, 8, 3, 9, 11, 2, 16, 12};
     std::cout << "Running merge sort on: ";
     printArray(arr5, size);
     mergeSort(arr5, size);

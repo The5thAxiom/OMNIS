@@ -1,5 +1,4 @@
 def bubbleSort(array):
-    print("Running bubble sort on: {}".format(array))
     sorted = False
     while (not sorted):
         sorted = True
@@ -9,10 +8,8 @@ def bubbleSort(array):
                 array[i] = array[i + 1]
                 array[i + 1] = temp
                 sorted = False
-    print(array)
 
 def selectionSort(array):
-    print("Running selection sort on : {}".format(array))
     for i in range(len(array)):
         min = i
         for j in range(i, len(array)):
@@ -21,10 +18,8 @@ def selectionSort(array):
             temp = array[i]
             array[i] = array[min]
             array[min] = temp
-    print(array)
 
 def insertionSort(array):
-    print("Running insertion sort on : {}".format(array))
     for i in range(len(array)):
         temp = array[i]
         for j in range(i-1, -1, -1):
@@ -33,12 +28,35 @@ def insertionSort(array):
             else:
                 break
             array[j] = temp
-    print(array)
+
+def quickSort(array):
+    pass
+
+def mergeSort(array):
+    pass
 
 if __name__ == "__main__":
     array = [7, 8, 3, 9, 11, 2, 15, 12]
+    print("Running bubble sort on : {}".format(array))
     bubbleSort(array)
+    print(array)
+
+    print("Running selection sort on : {}".format(array))
     array = [7, 8, 3, 9, 11, 2, 15, 12]
     selectionSort(array)
+    print(array)
+
+    print("Running insertion sort on : {}".format(array))
     array = [7, 8, 3, 9, 11, 2, 15, 12]
     insertionSort(array)
+    print(array)
+
+    print("Running quick sort on : {}".format(array))
+    array = [7, 8, 3, 9, 11, 2, 15, 12]
+    insertionSort(array)
+    print(array)
+
+    print("Running merge sort on : {}".format(array))
+    array = [7, 8, 3, 9, 11, 2, 15, 12]
+    insertionSort(array)
+    print(array)
