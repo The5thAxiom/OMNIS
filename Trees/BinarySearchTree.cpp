@@ -82,13 +82,22 @@ public:
         std::cout << std::endl;
     }
 // Operators
+    void operator<<(type num) {
+        this->Insert(num);
+    }
+    void operator+(type num) {
+        this->Insert(num);
+    }
 };
 
 int main() {
     BinarySearchTree<int> bst(5);
-    bst.Insert(2);
-    bst.Insert(7);
-    bst.Insert(1);
+    bst.PrintInOrder();
+    bst << 2;
+    bst.PrintInOrder();
+    bst << 7;
+    bst.PrintInOrder();
+    bst + 1;
     bst.PrintInOrder();
     bst.Insert(3);
     bst.PrintInOrder();
