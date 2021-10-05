@@ -14,7 +14,7 @@
 |---|---|-------|
 | Array Stack| WIP | WIP |
 | Linked List Stack| X | X |
-| Queue | WIP | X |
+| Queue | X | X |
 | Singly Linked List | WIP | WIP |
 | Doubly Linked List | WIP | WIP |
 | N-ary Tree | X | X |
