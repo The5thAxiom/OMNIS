@@ -1,11 +1,20 @@
-> This is still a WIP
+> Making common algorithms, data structures, other stuff in as many different languages as possible.
+
+# Todo
+- Add Top function to py and cpp stacks
+- Add first function to queues
+- Add sort functions for linked lists
+- Add searching functions for linked lists and bst
+- Complete merge and quick sort algorithms
+- Make proper documentation for all
+
+# Progress
 
 | Data Strucutres |C++|Python3|
 |---|---|-------|
 | Array Stack| WIP | WIP |
 | Linked List Stack| X | X |
-| Linear Queue | X | X |
-| Circular Queue | X | X |
+| Queue | WIP | X |
 | Singly Linked List | WIP | WIP |
 | Doubly Linked List | WIP | WIP |
 | N-ary Tree | X | X |
@@ -39,8 +48,6 @@
     - Method and operator overloading
 - Recursion
 
-# OMNIS
-Making common algorithms, data structures, other stuff in as many different languages as possible.
 # Planned Languages
 1. C++
 2. Python3
