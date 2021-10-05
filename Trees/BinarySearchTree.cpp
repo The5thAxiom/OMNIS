@@ -70,15 +70,15 @@ private:
 public:
     // Print Methods
     void PrintInOrder() {
-        inorder(this->Root);
+        this->inorder(this->Root);
         std::cout << std::endl;
     }
     void PrintPreOrder() {
-        preorder(this->Root);
+        this->preorder(this->Root);
         std::cout << std::endl;
     }
     void PrintPostOrder() {
-        postorder(this->Root);
+        this->postorder(this->Root);
         std::cout << std::endl;
     }
 // Operators
