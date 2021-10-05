@@ -14,8 +14,6 @@ void printArray(int * array, int size) {
 */
 void bubbleSort(int * array, int size) {
     int i, temp;
-    std::cout << "Running bubble sort on: ";
-    printArray(array, size);
     bool sorted;
     do { // as many passes as it takes
         sorted = true; // if the 'if' statement in the for loop below is never used, it means the array is sorted
@@ -28,7 +26,6 @@ void bubbleSort(int * array, int size) {
             }
         }
     } while (!sorted);
-    printArray(array, size);
 }
 
 /*
@@ -38,8 +35,6 @@ void bubbleSort(int * array, int size) {
 */
 void selectionSort(int * array, int size) {
     int current, j, temp, min;
-    std::cout << "Running selection sort on: ";
-    printArray(array, size);
     for (current = 0; current < size ; current++) { // for the 1st element
         min = current;
         for (j = current ; j < size ; j++) { // if any element after it is smaller, make it the min element
@@ -51,7 +46,6 @@ void selectionSort(int * array, int size) {
             array[min] = temp;
         }
     }
-    printArray(array, size);
 }
 
 /*
@@ -61,8 +55,6 @@ void selectionSort(int * array, int size) {
 */
 void insertionSort(int * array, int size) {
     int i, j, temp;
-    std::cout << "Running insertion sort on: ";
-    printArray(array, size);
     for (i = 0; i < size; i++) {
         temp = array[i]; // the 'current' element
         for (j = i - 1; j > -1; j--) { // go back from the current element
@@ -72,14 +64,47 @@ void insertionSort(int * array, int size) {
             array[j] = temp;
         }
     }
-    printArray(array, size);
+}
+
+void quickSort(int * array, int size) {
+    // to be implemented
+}
+
+void mergeSort(int * array, int size) {
+    // to be implemented
 }
 
 int main() {
-    int arr1[8] = {7, 8, 3, 9, 11, 2, 15, 12};
-    bubbleSort(arr1, 8);
+    int size = 8;
+    int arr1[size] = {7, 8, 3, 9, 11, 2, 15, 12};
+    std::cout << "Running bubble sort on: ";
+    printArray(arr1, size);
+    bubbleSort(arr1, size);
+    printArray(arr1, size);
+    
     int arr2[8] = {7, 8, 3, 9, 11, 2, 15, 12};
-    selectionSort(arr2, 8);
+    std::cout << "Running selection sort on: ";
+    printArray(arr2, size);
+    selectionSort(arr2, size);
+    printArray(arr2, size);
+
     int arr3[8] = {7, 8, 3, 9, 11, 2, 15, 12};
-    insertionSort(arr3, 8);
+    std::cout << "Running insertion sort on: ";
+    printArray(arr3, size);
+    insertionSort(arr3, size);
+    printArray(arr3, size);
+
+    int arr4[8] = {7, 8, 3, 9, 11, 2, 15, 12};
+    std::cout << "Running quick sort on: ";
+    printArray(arr4, size);
+    quickSort(arr4, size);
+    printArray(arr4, size);
+
+    int arr5[8] = {7, 8, 3, 9, 11, 2, 15, 12};
+    std::cout << "Running merge sort on: ";
+    printArray(arr5, size);
+    mergeSort(arr5, size);
+    printArray(arr5, size);
+
+    return 0;
 }
