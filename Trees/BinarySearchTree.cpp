@@ -88,6 +88,9 @@ public:
     void operator+(type num) {
         this->Insert(num);
     }
+    void operator+=(type num) {
+        this->Insert(num);
+    }
 };
 
 int main() {
@@ -99,7 +102,7 @@ int main() {
     bst.PrintInOrder();
     bst + 1;
     bst.PrintInOrder();
-    bst.Insert(3);
+    bst += 3;
     bst.PrintInOrder();
     bst.Insert(6);
     bst.PrintInOrder();
