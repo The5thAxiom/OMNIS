@@ -48,15 +48,37 @@ class BinarySearchTree:
         print(x.Value(), end = " ")
         if x.Right() != None:
             self.inorder(x.Right())
+    def preorder(self, x):
+        print(x.Value(), end = " ")
+        if x.Left() != None:
+            self.preorder(x.Left())
+        if x.Right() != None:
+            self.preorder(x.Right())
+    def postorder(self, x):
+        if x.Left() != None:
+            self.postorder(x.Left())
+        if x.Right() != None:
+            self.postorder(x.Right())
+        print(x.Value(), end = " ")
     def PrintInOrder(self):
         self.inorder(self.Root)
         print()
+    def PrintPreOrder(self):
+        self.preorder(self.Root)
+        print()
+    def PrintPostOrder(self):
+        self.postorder(self.Root)
+        print()
+    def __lshift__(self, num):
+        self.Insert(num)
+    def __add__(self, num):
+        self.Insert(num)
 
 if __name__ == "__main__":
     bst = BinarySearchTree(5)
     bst.Insert(2)
     bst.PrintInOrder()
-    bst.Insert(7)
+    bst << 7
     bst.PrintInOrder()
     bst.Insert(1)
     bst.PrintInOrder()
@@ -64,5 +86,7 @@ if __name__ == "__main__":
     bst.PrintInOrder()
     bst.Insert(6)
     bst.PrintInOrder()
-    bst.Insert(8)
+    bst + 8
     bst.PrintInOrder()
+    bst.PrintPreOrder()
+    bst.PrintPostOrder()

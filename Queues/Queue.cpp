@@ -32,11 +32,10 @@ public:
     }
     type Dequeue() {
         if (this->IsEmpty()) {
-            std::cout << "Queue empty, cannot enqueue" << std::endl;
+            std::cout << "Queue empty, cannot dequeue" << std::endl;
             return 0;
         }
-        type dequeued;
-        dequeued = array[this->head];
+        type dequeued = array[this->head];
         if (head == size - 1) head = 0;
         else head++;
         return dequeued;
@@ -46,9 +45,9 @@ public:
             std::cout << "Queue Empty" << std::endl;
             return;
         }
-        for (int cursor = head; cursor != tail;) {
+        for (int cursor = this->head; cursor != this->tail;) {
             std::cout << this->array[cursor] << " ";
-            if (cursor == size - 1) cursor = 0;
+            if (cursor == this->size - 1) cursor = 0;
             else cursor++;
         }
         std::cout << std::endl;
