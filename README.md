@@ -33,6 +33,12 @@
 | X | Not Started |
 | Done | Completed |
 
+# Concepts Used:
+- Data structures and algorithms
+- Object Oriented Programming:
+    - Method and operator overloading
+- Recursion
+
 # OMNIS
 Making common algorithms, data structures, other stuff in as many different languages as possible.
 # Planned Languages
