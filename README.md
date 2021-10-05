@@ -10,7 +10,7 @@
 | Doubly Linked List | WIP | WIP |
 | N-ary Tree | X | X |
 | Binary Tree | X | X |
-| Binary Search Tree | X | X |
+| Binary Search Tree | WIP | WIP |
 | Hash Maps | X | X |
 | Graphs | X | X |
 | Sets | X | X |
