@@ -1,19 +1,24 @@
 #include <iostream>
 
+template <typename type>
 struct BSTNode {
-    int value;
+    type value;
     struct BSTNode * parent;
     struct BSTNode * right;
     struct BSTNode * left;
 };
 
+/*
+    Only use datatypes which can be compared(int, float, char(i think)) for proper results
+*/
+template <typename type>
 class BinarySearchTree {
 private:
-    struct BSTNode * Root;
+    struct BSTNode<type> * Root;
 public:
 // Constructor(s) and Destructor(s)
-    BinarySearchTree(int num) {
-        Root = new struct BSTNode();
+    BinarySearchTree(type num) {
+        Root = new struct BSTNode<type>();
         Root->value = num;
         Root->parent = NULL;
         Root->left = NULL;
@@ -23,9 +28,9 @@ public:
         delete Root;
     }
 // Methods
-    void Insert(int num) {
-        struct BSTNode * cursor = this->Root;
-        struct BSTNode * temp = new struct BSTNode();
+    void Insert(type num) {
+        struct BSTNode<type> * cursor = this->Root;
+        struct BSTNode<type> * temp = new struct BSTNode<type>();
         temp->value = num;
         while (true) {
             if (cursor->value > temp->value) {
@@ -45,22 +50,42 @@ public:
             }
         }
     }
+private:
     // Traversal Methods
-    void inorder(BSTNode * x) {
+    void inorder(BSTNode<type> * x) {
         if (x->left != NULL) inorder(x->left);
         std::cout << x->value << " ";
         if (x->right != NULL) inorder(x->right);
     }
+    void preorder(BSTNode<type> * x) {
+        std::cout << x->value << " ";
+        if (x->left != NULL) inorder(x->left);
+        if (x->right != NULL) inorder(x->right);
+    }
+    void postorder(BSTNode<type> * x) {
+        if (x->left != NULL) inorder(x->left);
+        if (x->right != NULL) inorder(x->right);
+        std::cout << x->value << " ";
+    }
+public:
     // Print Methods
     void PrintInOrder() {
         inorder(this->Root);
+        std::cout << std::endl;
+    }
+    void PrintPreOrder() {
+        preorder(this->Root);
+        std::cout << std::endl;
+    }
+    void PrintPostOrder() {
+        postorder(this->Root);
         std::cout << std::endl;
     }
 // Operators
 };
 
 int main() {
-    BinarySearchTree bst(5);
+    BinarySearchTree<int> bst(5);
     bst.Insert(2);
     bst.Insert(7);
     bst.Insert(1);
@@ -71,5 +96,7 @@ int main() {
     bst.PrintInOrder();
     bst.Insert(8);
     bst.PrintInOrder();
+    bst.PrintPreOrder();
+    bst.PrintPostOrder();
     return 0;
 }
