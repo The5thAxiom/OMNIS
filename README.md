@@ -2,11 +2,12 @@
 
 # Todo
 - Add Top function to py and cpp stacks
-- Add first function to queues
+- Test Dequeue for queues
 - Add sort functions for linked lists
 - Add searching functions for linked lists and bst
 - Complete merge and quick sort algorithms
 - Make proper documentation for all
+- Create `std::cout` like stacking of the `<<` operator for push/add/insert(bst)/enqueue for easy use.
 
 # Progress
 
