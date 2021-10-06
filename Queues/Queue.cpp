@@ -8,18 +8,21 @@ class Queue {
 private:
     type * array;
     int size, head, tail;
+    bool empty, full;
 public:
     Queue(int size) {
         this->size = size;
         this->array = (type *)calloc(size, sizeof(type));
         this->head = 0; // the first element
         this->tail = 0; // the last available space for an element
+        this->empty = true;
+        this->full = false;
     }
     bool IsEmpty() {
-        return (this->head == this->tail);
+        return this->empty;
     }
     bool IsFull() {
-        return (this->tail == this->head - 1 || (this->tail == size - 1 && this->head == 0));
+        return this->full;
     }
     void Enqueue(type num) {
         if (this->IsFull()) {
@@ -27,8 +30,10 @@ public:
             return;
         }
         array[this->tail] = num;
-        if (this->tail == this->size - 1 || this->head != 0) tail = 0;
-        else this->tail++;
+        this->empty = false;
+        this->tail++;
+        if (this->tail == this->size) this->tail = 0;
+        if (this->tail == this->head) this->full = true;
     }
     type Dequeue() {
         if (this->IsEmpty()) {
@@ -36,8 +41,10 @@ public:
             return 0;
         }
         type dequeued = array[this->head];
-        if (head == size - 1) head = 0;
-        else head++;
+        this->head++;
+        this->full = false;
+        if (this->head == this->size) this->head = 0;
+        if (this->head == this->tail) this->empty = true;
         return dequeued;
     }
     void Print() {
@@ -45,12 +52,22 @@ public:
             std::cout << "Queue Empty" << std::endl;
             return;
         }
-        for (int cursor = this->head; cursor != this->tail;) {
+        std::cout
+            << "tail: " << this->tail
+            << "; head: " << this->head
+            << "; size: " << this->size
+            << "; queue: "
+        ;
+        for (int i = 0; i < this->size; i++) {
+            std::cout << this->array[i] << " ";
+        }
+        std::cout << std::endl;
+/*         for (int cursor = this->head; cursor != this->tail;) {
             std::cout << this->array[cursor] << " ";
             if (cursor == this->size - 1) cursor = 0;
             else cursor++;
         }
-        std::cout << std::endl;
+        std::cout << std::endl; */
     }
 // Operators
     void operator<<(type num) {
@@ -65,48 +82,30 @@ public:
     void operator--(int) {
         this->Dequeue();
     }
+    void operator>>(int num) {
+        for (int i = 0; i < num; i++) {
+            this->Dequeue();
+        }
+    }
 };
 
 int main() {
-    Queue<int> q(6);
+    Queue<int> q(5);
     q.Print();
-    q.Enqueue(1);
+    q << 1;
     q.Print();
     q << 2;
     q.Print();
-    q + 3;
+    q << 3;
     q.Print();
-    q += 5;
+    q << 4;
     q.Print();
-    q += 5;
+    q << 5;
     q.Print();
-    q--;
-    q += 77;
+    q >> 1;
     q.Print();
-    q += 5;
-    q.Print();
-    q += 5;
-    q.Print();
-    q--;
-    q.Print();
-    q.Dequeue();
+    q << 6;
     q.Print();
 
-    Queue<char> a(10);
-    a.Print();
-    a << 'a';
-    a.Print();
-    a << 'b';
-    a.Print();
-    a << 'c';
-    a.Print();
-    a--;
-    a.Print();
-    a--;
-    a.Print();
-    a--;
-    a.Print();
-    a--;
-    a.Print();
     return 0;
 }
