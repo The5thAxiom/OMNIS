@@ -66,13 +66,25 @@ void insertionSort(int * array, int size) {
     }
 }
 
+void merge(int * array, int start, int mid, int end) {
+    
+}
+
+void mergeSort(int * array, int start, int end) {
+    int mid;
+    if (start < end) {
+        mid = (start + end)/2;
+        mergeSort(array, start, mid);
+        mergeSort(array, mid + 1, end);
+        merge(array, start, mid, end);
+    }
+}
+
 void quickSort(int * array, int size) {
     // to be implemented
 }
 
-void mergeSort(int * array, int size) {
-    // to be implemented
-}
+
 
 int main() {
     int size = 8;
@@ -94,17 +106,17 @@ int main() {
     insertionSort(arr3, size);
     printArray(arr3, size);
 
+    int arr5[8] = {7, 8, 3, 9, 11, 2, 16, 12};
+    std::cout << "Running merge sort on: ";
+    printArray(arr5, size);
+    mergeSort(arr5, 0, size - 1);
+    printArray(arr5, size);
+
     int arr4[8] = {7, 8, 3, 9, 11, 2, 16, 12};
     std::cout << "Running quick sort on: ";
     printArray(arr4, size);
     quickSort(arr4, size);
     printArray(arr4, size);
-
-    int arr5[8] = {7, 8, 3, 9, 11, 2, 16, 12};
-    std::cout << "Running merge sort on: ";
-    printArray(arr5, size);
-    mergeSort(arr5, size);
-    printArray(arr5, size);
 
     return 0;
 }

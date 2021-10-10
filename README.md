@@ -43,12 +43,6 @@
 | X | Not Started |
 | Done | Completed |
 
-# Concepts Used:
-- Data structures and algorithms
-- Object Oriented Programming:
-    - Method and operator overloading
-- Recursion
-
 # Planned Languages
 1. C++
 2. Python3
