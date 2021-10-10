@@ -34,7 +34,7 @@
 | Selection Sort | WIP | WIP |
 | Insertion Sort | WIP | WIP |
 | Quick Sort | X | X |
-| Merge Sort | X | X |
+| Merge Sort | WIP | X |
 
 
 | Symbol | Meaning |
