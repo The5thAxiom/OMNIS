@@ -67,7 +67,16 @@ void insertionSort(int * array, int size) {
 }
 
 void merge(int * array, int start, int mid, int end) {
-    
+    int n1 = q - p + 1;
+    int n2 = r - q;
+    int L[n1], R[n2], i, j, k;
+    // making two arrays of ?
+    for (i = 0; i < n1; i++) {
+        L[i] = array[p + i - 1]
+    }
+    for (j = 0; j < n2; j++) {
+
+    }
 }
 
 void mergeSort(int * array, int start, int end) {
