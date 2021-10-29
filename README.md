@@ -11,21 +11,21 @@
 
 # Progress
 
-| Data Strucutres |C++|Python3|
-|---|---|-------|
-| Array Stack| WIP | WIP |
-| Linked List Stack| X | X |
-| Queue | WIP | WIP |
-| Singly Linked List | WIP | WIP |
-| Doubly Linked List | WIP | WIP |
-| N-ary Tree | X | X |
-| Binary Tree | X | X |
-| Binary Search Tree | WIP | WIP |
-| Hash Maps | X | X |
-| Graphs | X | X |
-| Sets | X | X |
-| Min Heap | X | X |
-| Max Heap| X | X |
+| Data Strucutres |C++|Python3|C#|
+|---|---|-------|---|
+| Array Stack| WIP | WIP | X |
+| Linked List Stack| X | X | X |
+| Queue | WIP | WIP | X |
+| Singly Linked List | WIP | WIP | X |
+| Doubly Linked List | WIP | WIP | X |
+| N-ary Tree | X | X | X |
+| Binary Tree | X | X | X |
+| Binary Search Tree | WIP | WIP | WIP |
+| Hash Maps | X | X | X |
+| Graphs | X | X | X |
+| Sets | X | X | X |
+| Min Heap | X | X | X |
+| Max Heap| X | X | X |
 
 
 | Algortithms |C++|Python3|
