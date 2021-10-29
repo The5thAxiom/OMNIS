@@ -37,11 +37,11 @@
 | Merge Sort | WIP | X |
 
 
-| Symbol | Meaning |
-|--------|---------|
-| WIP | Work in progress |
-| X | Not Started |
-| Done | Completed |
+| Symbol | Meaning | C# |
+|--------|---------|---|
+| WIP | WIP | X |
+| X | Not Started | X |
+| Done | Completed | X |
 
 # Planned Languages
 1. C++
