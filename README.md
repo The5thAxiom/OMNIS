@@ -28,13 +28,13 @@
 | Max Heap| X | X | X |
 
 
-| Algortithms |C++|Python3|
-|---|---|-------|
-| Bubble Sort | WIP | WIP |
-| Selection Sort | WIP | WIP |
-| Insertion Sort | WIP | WIP |
-| Quick Sort | X | X |
-| Merge Sort | WIP | X |
+| Algortithms |C++|Python3|C#|
+|---|---|-------|---|
+| Bubble Sort | WIP | WIP | X |
+| Selection Sort | WIP | WIP | X |
+| Insertion Sort | WIP | WIP | X |
+| Quick Sort | X | X | X |
+| Merge Sort | WIP | X | X |
 
 
 | Symbol | Meaning | C# |
