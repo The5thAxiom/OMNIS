@@ -22,7 +22,7 @@
 | Binary Tree | X | X | X |
 | Binary Search Tree | WIP | WIP | WIP |
 | Hash Maps | X | X | X |
-| Graphs | X | X | X |
+| Graphs | WIP | X | X |
 | Sets | X | X | X |
 | Min Heap | X | X | X |
 | Max Heap| X | X | X |
