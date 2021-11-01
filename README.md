@@ -11,37 +11,37 @@
 
 # Progress
 
-| Data Strucutres |C++|Python3|
-|---|---|-------|
-| Array Stack| WIP | WIP |
-| Linked List Stack| X | X |
-| Queue | WIP | WIP |
-| Singly Linked List | WIP | WIP |
-| Doubly Linked List | WIP | WIP |
-| N-ary Tree | X | X |
-| Binary Tree | X | X |
-| Binary Search Tree | WIP | WIP |
-| Hash Maps | X | X |
-| Graphs | X | X |
-| Sets | X | X |
-| Min Heap | X | X |
-| Max Heap| X | X |
+| Data Strucutres |C++|Python3|C#|
+|---|---|-------|---|
+| Array Stack| WIP | WIP | X |
+| Linked List Stack| X | X | X |
+| Queue | WIP | WIP | X |
+| Singly Linked List | WIP | WIP | X |
+| Doubly Linked List | WIP | WIP | X |
+| N-ary Tree | X | X | X |
+| Binary Tree | X | X | X |
+| Binary Search Tree | WIP | WIP | WIP |
+| Hash Maps | X | X | X |
+| Graphs | X | X | X |
+| Sets | X | X | X |
+| Min Heap | X | X | X |
+| Max Heap| X | X | X |
 
 
-| Algortithms |C++|Python3|
-|---|---|-------|
-| Bubble Sort | WIP | WIP |
-| Selection Sort | WIP | WIP |
-| Insertion Sort | WIP | WIP |
-| Quick Sort | X | X |
-| Merge Sort | WIP | X |
+| Algortithms |C++|Python3|C#|
+|---|---|-------|---|
+| Bubble Sort | WIP | WIP | X |
+| Selection Sort | WIP | WIP | X |
+| Insertion Sort | WIP | WIP | X |
+| Quick Sort | X | X | X |
+| Merge Sort | WIP | X | X |
 
 
-| Symbol | Meaning |
-|--------|---------|
-| WIP | Work in progress |
-| X | Not Started |
-| Done | Completed |
+| Symbol | Meaning | C# |
+|--------|---------|---|
+| WIP | WIP | X |
+| X | Not Started | X |
+| Done | Completed | X |
 
 # Planned Languages
 1. C++
