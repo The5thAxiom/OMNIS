@@ -125,5 +125,7 @@ int main() {
     a.addEdge("6", "8");
     a.addEdge("7", "8");
     a.show();
+    a.printAdjacencyMatrix();
+    a.printIncidenceMatrix();
     return 0;
 }
