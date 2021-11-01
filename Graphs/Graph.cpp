@@ -16,40 +16,14 @@ public:
     }
 };
 
-/**
- * make a graph to which an arbitrary number of edges and vertices can be added
- * get paths of a given length between any 2 given vertices
- * Graph G();
- * G.addVertex("A");
- * G.addVertex("B");
- * G.addEdge("A", "B", 2);
- * G.addEdge("A", "B"); // default value
- * G.removeVertex("B"); // this should remove any edges which has B in them too
- * * * * * * * * * * * * * * * * * * * * *
- * adjacency list: a list of all 
- */
-/*
-node: name, weight
-if weight == 0 then the node
-*/
-/*
-Head
-\/
-A -> B -> C
-\/
-B -> A
-\/
-C -> A
-*/
-
 class Graph {
 private:
-    int numVert;
+    int numVerts;
     int numEdges;
     std::list<std::list<struct GraphNode>> adj; // a list of GraphNode list pointers
 public:
     Graph() {
-        this->numVert = 0;
+        this->numVerts = 0;
         this->numEdges = 0;
     }
     void addVertex(std::string name) { // add a check for name already being in the list
@@ -57,6 +31,7 @@ public:
         std::list<struct GraphNode> newVert;
         newVert.push_back(node);
         this->adj.push_back(newVert);
+        this->numVerts++;
     }
     void addEdge(
         std::string source,
@@ -88,11 +63,15 @@ public:
                 }
                 GraphNode newDest(dest, weight);
                 i->push_back(newDest);
-                if (first) this->addEdge(dest, source, weight, false);
+                if (first) {
+                    this->addEdge(dest, source, weight, false);
+                    this->numEdges++;
+                }
             }
         }
     }
     void show() {
+        std::cout << "Graph with " << this->numVerts << " vertices and " << this->numEdges << " edges:" << std::endl;
         for (
             std::list<std::list<GraphNode>>::iterator i = this->adj.begin();
             i != adj.end();
