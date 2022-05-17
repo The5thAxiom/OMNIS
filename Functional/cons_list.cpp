@@ -14,6 +14,13 @@ private:
     bool isEmptyList;
     T headElement;
     List<T> *tailList;
+    void add(T x) {
+        if (this->tailList == NULL_LIST) {
+            this->tailList = new List<T>(x);
+        } else {
+            this->tailList->add(x);
+        }
+    }
 public:
     List() {
         this->isEmptyList = true;
@@ -45,41 +52,7 @@ public:
     bool isEmpty() {
         return this->isEmptyList;
     }
-    void print() {
-        this->forEach([](T t, int index, bool isFirst, bool isLast) {
-            std::cout
-                << (isFirst ? "[" : "")
-                << t << "(" << index << ")"
-                << (isLast ? " ]\n" : " | ")
-            ;
-        });
-    }
-    private:
-    void joinInternal(List<T> *that) {
-        if (this->tailList != NULL_LIST) { // go to the end of this
-            this->tailList->joinInternal(that);
-        } else {
-            this->isEmptyList = false;
-            this->headElement = that->headElement;
-            if (that->tailList != NULL_LIST) {
-                this->tailList = new List<T>();
-                this->tailList->joinInternal(that->tailList);
-            }
-        }
-    }
-    public:
-    List<T> * join(List<T> *that) {
-        if (this->isEmptyList) {
-            return that;
-        } else if (that->isEmptyList) {
-            return this;
-        } else {
-            List<T> * x = new List<T>();
-            x->joinInternal(this);
-            x->joinInternal(that);
-            return x;
-        }
-    }
+
     template <typename U>
     List<U> *map(std::function<U(T)> func) {
         List<U> *tail;
@@ -91,6 +64,7 @@ public:
         List<U> *ans = new List<U>(func(this->headElement), tail);
         return ans;
     }
+
     void forEach(std::function<void(T)> func) {
         List<T> *it = this;
         while (it->tailList != NULL_LIST) {
@@ -111,6 +85,31 @@ public:
         i++;
         it = it->tailList;
         func(it->headElement, i, false, true);
+    }
+    void print() {
+        this->forEach([](T t, int index, bool isFirst, bool isLast) {
+            std::cout
+                << (isFirst ? "[" : "")
+                << t << "(" << index << ")"
+                << (isLast ? " ]\n" : " | ")
+            ;
+        });
+    }
+    List<T> * join(List<T> *that) {
+        if (this->isEmptyList) {
+            return that;
+        } else if (that->isEmptyList) {
+            return this;
+        } else {
+            List<T> * x = new List<T>();
+            that->forEach([x](T head) {
+                x->add(head);
+            });
+            this->forEach([x](T head) {
+                x->add(head);
+            });
+            return x;
+        }
     }
 };
 
